@@ -1,0 +1,98 @@
+div.multi-email-input-container {
+    background: white;
+}
+
+ul.multi-email-input-list {
+    overflow: hidden;
+    cursor: text;
+    margin: 0;
+    padding: 0.2em;
+    background: transparent;
+    width: 100%;
+}
+
+ul.multi-email-input-list li {
+    list-style-type: none;
+    max-width: 100%;
+}
+
+li.multi-email-input-token p {
+    display: inline;
+    padding: 0;
+    margin: 0;
+}
+
+.multi-email-input-delete-button {
+    color: black;
+    margin-left: 0.3em;
+    cursor: pointer;
+}
+
+.multi-email-input-delete-button:hover {
+    color: grey;
+}
+
+.multi-email-input-delete-button::after {
+    content: "x";
+    font-weight: bold;
+    font-style: normal;
+}
+
+/* TOKENS */
+
+li.multi-email-input-token {
+    overflow: hidden;
+    margin: 0.2em 0.1em;
+    padding: 0.1em 0.5em;
+    background-color: #dee7f8;
+    cursor: default;
+    border-radius: 15px;
+    float: left;
+}
+
+li.multi-email-input-token-invalid {
+    background-color: #ffd1d1;
+}
+
+li.multi-email-input-list-item {
+    border: none;
+    background: transparent;
+    float: left;
+    padding: 0;
+    margin: 0;
+}
+
+.multi-email-input-expanding-area {
+    --padding: 0.5rem 0.3em;
+
+    position: relative;
+    background: white;
+    padding: var(--padding);
+}
+
+.multi-email-input-expanding-area > textarea, .multi-email-input-expanding-area > pre {
+    margin: 0;
+    border: none;
+    line-height: normal;
+    white-space: pre-wrap;
+    word-wrap: break-word;
+    font-size: inherit;
+    font-family: inherit;
+}
+
+.multi-email-input-expanding-area > textarea {
+    width: 100%;
+    overflow: hidden;
+    position: absolute;
+    top: 0;
+    left: 0;
+    resize: none;
+    outline: none;
+    padding: var(--padding);
+}
+
+.multi-email-input-expanding-area > pre {
+    display: block;
+    visibility: hidden;
+    padding: 0 1rem;
+}

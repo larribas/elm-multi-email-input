@@ -1,37 +1,82 @@
-## Welcome to GitHub Pages
+# elm-multi-email-input
 
-You can use the [editor on GitHub](https://github.com/larribas/elm-multi-email-input/edit/master/README.md) to maintain and preview the content for your website in Markdown files.
+Input multiple emails on elm
 
-Whenever you commit to this repository, GitHub Pages will run [Jekyll](https://jekyllrb.com/) to rebuild the pages in your site, from the content in your Markdown files.
 
-### Markdown
+## [Try it out](https://larribas.github.io/elm-multi-email-input/)
 
-Markdown is a lightweight and easy-to-use syntax for styling your writing. It includes conventions for
+![alt text](https://github.com/larribas/elm-multi-email-input/raw/master/demo/preview.gif "Animated preview for the component")
 
-```markdown
-Syntax highlighted code block
+## How to use it
 
-# Header 1
-## Header 2
-### Header 3
+Here's an example of a minimal integration scenario:
 
-- Bulleted
-- List
+```elm
+module Main exposing (main)
 
-1. Numbered
-2. List
+import Html exposing (Html)
+import Html.Attributes as Attr
+import Html.Events as Ev
+import MultiEmailInput
 
-**Bold** and _Italic_ and `Code` text
 
-[Link](url) and ![Image](src)
+main : Program Never Model Msg
+main =
+    Html.program
+        { init = init
+        , update = update
+        , view = view
+        , subscriptions = subscriptions
+        }
+
+
+type alias Model =
+    { emails : List String
+    , inputState : MultiEmailInput.State
+    }
+
+
+type Msg
+    = MultiEmailInputMsg MultiEmailInput.Msg
+
+
+init : ( Model, Cmd Msg )
+init =
+    ( { emails = []
+      , inputState = MultiEmailInput.init "multi-email-textarea"
+      }
+    , Cmd.none
+    )
+
+
+subscriptions : Model -> Sub Msg
+subscriptions model =
+    Sub.none
+
+
+update : Msg -> Model -> ( Model, Cmd Msg )
+update msg model =
+    case msg of
+        MultiEmailInputMsg subMsg ->
+            let
+                ( nextState, nextEmails, nextCmd ) =
+                    MultiEmailInput.update subMsg model.inputState model.emails
+            in
+            ( { model | emails = nextEmails, inputState = nextState }, Cmd.map MultiEmailInputMsg nextCmd )
+
+
+view : Model -> Html Msg
+view model =
+    MultiEmailInput.view
+        MultiEmailInputMsg
+        []
+        "Write an email here"
+        model.emails
+        model.inputState
+
 ```
 
-For more details see [GitHub Flavored Markdown](https://guides.github.com/features/mastering-markdown/).
 
-### Jekyll Themes
+## Contribute
 
-Your Pages site will use the layout and styles from the Jekyll theme you have selected in your [repository settings](https://github.com/larribas/elm-multi-email-input/settings). The name of this theme is saved in the Jekyll `_config.yml` configuration file.
-
-### Support or Contact
-
-Having trouble with Pages? Check out our [documentation](https://help.github.com/categories/github-pages-basics/) or [contact support](https://github.com/contact) and we’ll help you sort it out.
+Any contributions or feedback are welcome!
