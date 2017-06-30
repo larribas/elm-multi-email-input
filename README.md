@@ -9,7 +9,14 @@ Input multiple emails on elm
 
 ## How to use it
 
-Here's an example of a minimal integration scenario:
+Install the package:
+
+```
+elm-package install larribas/elm-multi-email-input
+```
+
+Here's an example of a minimal integration scenario. I also recommend that you download the default sylesheet at `styles/multi-email-input.css`.
+
 
 ```elm
 module Main exposing (main)
