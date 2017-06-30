@@ -1,4 +1,4 @@
-# elm-multi-email-input
+# elm-multi-email-input [![Build Status](https://travis-ci.org/elm-lang/core.svg?branch=master)](https://travis-ci.org/larribas/elm-multi-email-input)
 
 Input multiple emails on elm
 
