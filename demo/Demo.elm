@@ -115,7 +115,7 @@ viewCustomStylesExample : Model -> Html Msg
 viewCustomStylesExample model =
     Html.div [ Attr.class "example custom-styles" ]
         [ Html.h2 [] [ Html.text "Custom Styles" ]
-        , Html.p [ Attr.class "explanation" ] [ Html.text "The default styles are build to be easily customizable. ", Html.a [ Attr.target "_blank", Attr.href "https://github.com/larribas/elm-multi-email-input/blob/master/dist/demo.css" ] [ Html.text "See the code for this example's styles here" ] ]
+        , Html.p [ Attr.class "explanation" ] [ Html.text "The default styles are build to be easily customizable. ", Html.a [ Attr.target "_blank", Attr.href "https://github.com/larribas/elm-multi-email-input/blob/master/demo/demo.css" ] [ Html.text "See the code for this example's styles here" ] ]
         , MultiEmailInput.view
             CustomStylesMultiEmailInputMsg
             []

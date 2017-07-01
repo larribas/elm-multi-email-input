@@ -9484,7 +9484,7 @@ var _larribas$elm_multi_email_input$Demo$viewCustomStylesExample = function (mod
 									_0: _elm_lang$html$Html_Attributes$target('_blank'),
 									_1: {
 										ctor: '::',
-										_0: _elm_lang$html$Html_Attributes$href('https://github.com/larribas/elm-multi-email-input/blob/master/dist/demo.css'),
+										_0: _elm_lang$html$Html_Attributes$href('https://github.com/larribas/elm-multi-email-input/blob/master/demo/demo.css'),
 										_1: {ctor: '[]'}
 									}
 								},
