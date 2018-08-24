@@ -2,7 +2,7 @@
 
 Input multiple emails on elm
 
-> Note: I've generalized this component's functionality and created [this other one](https://github.com/larribas/elm-multi-input), which offers the same set of features for emails, tags, and any other things you may want to input. Please, prefer using that one.
+> __Important Note__: I've generalized this component's functionality and created [this other one](https://github.com/larribas/elm-multi-input), which offers the same set of features for emails, tags, and any other things you may want to input. Please, use that one instead.
 
 
 ## [Try it out](https://larribas.github.io/elm-multi-email-input/)
